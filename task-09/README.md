@@ -1,3 +1,5 @@
+https://konaparthijeevitha08.github.io/
+My personal website link.
 I really liked it alot having my own website .
 In a very easy steps, this wont that difficult to do.
 Youtube and Google helped me alot while doing this task.
