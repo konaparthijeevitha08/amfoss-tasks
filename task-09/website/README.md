@@ -1,3 +1,0 @@
-This was my favourite one ...i love to explore such tasks .
-literally i have showed my creativity and my thoughts that how i would imagine my college life ...
-exploring and getting familiar with canva is pretty easy..
