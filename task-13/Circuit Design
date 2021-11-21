@@ -1,0 +1,44 @@
+int distance = 0;
+
+// include the library code:
+#include <LiquidCrystal.h>
+
+// initialize the library with the numbers of the interface pins
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+
+long readUltrasonicSensorDistance(int triggerPin, int echoPin)
+{
+  pinMode(triggerPin, Output);
+  digitalWrite(triggerPin, Low);
+  delayMicroseconds(2);
+  digitalWrite(triggerPin, High);
+  delayMicroseconds(10);
+  digitalWrite(triggerPin, Low);
+  pinMode(echoPin, Input);
+  return pulseIn(echoPin, High);
+}
+void setup()
+{
+  // set up the LCD's number of columns and rows:
+  lcd.begin(16, 2);
+  // Print a message to the LCD.
+  lcd.print("Parking Slot");
+}
+
+void loop() 
+{ // getting input from Parking Slot
+  distance = 0.01723 * readUltrasonicSensorDistance(7, 7);
+  // check Parking slot
+  if (distance <= 100)
+  {
+       lcd.setCursor(0, 1);
+    // Print a message to the LCD.
+       lcd.print(" is filled up ");
+  }
+  if (distance > 200)
+  {
+       lcd.setCursor(0, 1);
+    // Print a message to the LCD.
+       lcd.print(" is vacant ");
+  }
+}
